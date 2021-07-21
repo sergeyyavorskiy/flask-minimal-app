@@ -1,22 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask
 
-application = Flask(__name__)
+app = Flask(__name__)
 
-
-@application.route("/")
-def root():
-    return render_template("index.html")
-
-@application.route("/help")
-def helppage():
-    return render_template("help.html")
-
-@application.route("/hello")
-def index():
-    return "Hello World from Flask Minimal Hello Page.<b> v1.0"
-
-#--------Main------------------
-if __name__ == "__main__":
-    application.debug = True
-    application.run()
-#------------------------------
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
